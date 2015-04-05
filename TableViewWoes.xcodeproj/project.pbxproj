@@ -13,6 +13,11 @@
 		23DCF9541AD1B4B400FE7F5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23DCF9531AD1B4B400FE7F5C /* Images.xcassets */; };
 		23DCF9571AD1B4B400FE7F5C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23DCF9551AD1B4B400FE7F5C /* LaunchScreen.xib */; };
 		23DCF9631AD1B4B400FE7F5C /* TableViewWoesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DCF9621AD1B4B400FE7F5C /* TableViewWoesTests.swift */; };
+		23DCF96D1AD1C79300FE7F5C /* OrganizationDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DCF96C1AD1C79300FE7F5C /* OrganizationDetailTableViewController.swift */; };
+		23DCF9701AD1C87800FE7F5C /* noodlewerk-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 23DCF96E1AD1C87800FE7F5C /* noodlewerk-banner.png */; };
+		23DCF9711AD1C87800FE7F5C /* noodlewerk-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 23DCF96F1AD1C87800FE7F5C /* noodlewerk-logo.png */; };
+		23DCF9731AD1CA3800FE7F5C /* OrganizationDetailCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DCF9721AD1CA3800FE7F5C /* OrganizationDetailCells.swift */; };
+		23DCF9751AD1CC1200FE7F5C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DCF9741AD1CC1200FE7F5C /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		23DCF95C1AD1B4B400FE7F5C /* TableViewWoesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewWoesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23DCF9611AD1B4B400FE7F5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23DCF9621AD1B4B400FE7F5C /* TableViewWoesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewWoesTests.swift; sourceTree = "<group>"; };
+		23DCF96C1AD1C79300FE7F5C /* OrganizationDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationDetailTableViewController.swift; sourceTree = "<group>"; };
+		23DCF96E1AD1C87800FE7F5C /* noodlewerk-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noodlewerk-banner.png"; sourceTree = "<group>"; };
+		23DCF96F1AD1C87800FE7F5C /* noodlewerk-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noodlewerk-logo.png"; sourceTree = "<group>"; };
+		23DCF9721AD1CA3800FE7F5C /* OrganizationDetailCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationDetailCells.swift; sourceTree = "<group>"; };
+		23DCF9741AD1CC1200FE7F5C /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +87,13 @@
 		23DCF9491AD1B4B400FE7F5C /* TableViewWoes */ = {
 			isa = PBXGroup;
 			children = (
+				23DCF96E1AD1C87800FE7F5C /* noodlewerk-banner.png */,
+				23DCF96F1AD1C87800FE7F5C /* noodlewerk-logo.png */,
 				23DCF94C1AD1B4B400FE7F5C /* AppDelegate.swift */,
 				23DCF94E1AD1B4B400FE7F5C /* ViewController.swift */,
+				23DCF9741AD1CC1200FE7F5C /* RoundedButton.swift */,
+				23DCF96C1AD1C79300FE7F5C /* OrganizationDetailTableViewController.swift */,
+				23DCF9721AD1CA3800FE7F5C /* OrganizationDetailCells.swift */,
 				23DCF9501AD1B4B400FE7F5C /* Main.storyboard */,
 				23DCF9531AD1B4B400FE7F5C /* Images.xcassets */,
 				23DCF9551AD1B4B400FE7F5C /* LaunchScreen.xib */,
@@ -193,6 +208,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				23DCF9521AD1B4B400FE7F5C /* Main.storyboard in Resources */,
+				23DCF9711AD1C87800FE7F5C /* noodlewerk-logo.png in Resources */,
+				23DCF9701AD1C87800FE7F5C /* noodlewerk-banner.png in Resources */,
 				23DCF9571AD1B4B400FE7F5C /* LaunchScreen.xib in Resources */,
 				23DCF9541AD1B4B400FE7F5C /* Images.xcassets in Resources */,
 			);
@@ -212,8 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23DCF96D1AD1C79300FE7F5C /* OrganizationDetailTableViewController.swift in Sources */,
+				23DCF9751AD1CC1200FE7F5C /* RoundedButton.swift in Sources */,
 				23DCF94F1AD1B4B400FE7F5C /* ViewController.swift in Sources */,
 				23DCF94D1AD1B4B400FE7F5C /* AppDelegate.swift in Sources */,
+				23DCF9731AD1CA3800FE7F5C /* OrganizationDetailCells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +425,7 @@
 				23DCF9681AD1B4B400FE7F5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		23DCF9691AD1B4B400FE7F5C /* Build configuration list for PBXNativeTarget "TableViewWoesTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +434,7 @@
 				23DCF96B1AD1B4B400FE7F5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
