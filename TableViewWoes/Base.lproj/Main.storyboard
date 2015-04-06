@@ -17,7 +17,6 @@
             <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
-            <string>SourceSansPro-Semibold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -75,7 +74,7 @@
         <scene sceneID="eFH-Hi-smx">
             <objects>
                 <tableViewController storyboardIdentifier="organization-detail" id="eMh-cS-Dbn" customClass="OrganizationDetailTableViewController" customModule="TableViewWoes" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="9FY-Qo-n7T">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="9FY-Qo-n7T">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -132,7 +131,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="754" verticalHuggingPriority="754" horizontalCompressionResistancePriority="754" verticalCompressionResistancePriority="754" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htv-Ly-Bfj" userLabel="CompanyNameLabel">
                                             <rect key="frame" x="76" y="13" width="426" height="24"/>
-                                            <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -330,9 +329,6 @@
                                         <constraint firstItem="RXz-ZT-xT3" firstAttribute="top" secondItem="aq6-5A-R0p" secondAttribute="bottom" constant="10" id="i9F-CW-aHH"/>
                                         <constraint firstItem="aq6-5A-R0p" firstAttribute="leading" secondItem="4S6-dF-Say" secondAttribute="leading" id="x3o-Ss-sja"/>
                                     </constraints>
-                                    <connections>
-                                        <outletCollection property="gestureRecognizers" destination="NYm-1t-cN0" appends="YES" id="zdj-S1-50G"/>
-                                    </connections>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -344,8 +340,8 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="eMh-cS-Dbn" id="0z8-ei-j51"/>
-                            <outlet property="delegate" destination="eMh-cS-Dbn" id="YeE-MT-yPp"/>
+                            <outlet property="dataSource" destination="eMh-cS-Dbn" id="mte-Os-4Ql"/>
+                            <outlet property="delegate" destination="eMh-cS-Dbn" id="zea-Ab-ZGD"/>
                         </connections>
                     </tableView>
                     <toolbarItems/>
@@ -354,11 +350,6 @@
                     <size key="freeformSize" width="600" height="800"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="urO-gl-nsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="NYm-1t-cN0">
-                    <connections>
-                        <action selector="tapped:" destination="eMh-cS-Dbn" id="rF6-UQ-9mt"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1072" y="429"/>
         </scene>

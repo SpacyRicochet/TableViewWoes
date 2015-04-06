@@ -12,7 +12,8 @@ class OrganizationDetailCell : UITableViewCell
 {
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.whiteColor()
+        selectionStyle = UITableViewCellSelectionStyle.None
     }
     
     func configureWithOrganization(organization: Organization, indexPath: NSIndexPath)
@@ -103,9 +104,10 @@ class OrganizationDetailAboutCardCell: OrganizationDetailCell
         aboutTextLabel.text = aboutCard.message
     }
     
-    func toggleReadMore() {
-        let expanded = aboutTextLabel.numberOfLines == 5
-        aboutTextLabel.numberOfLines = expanded ? 5 : 0
+    func expandCard(shouldExpand: Bool)
+    {
+        println("DEBUG: \(shouldExpand ? 0 : 5)")
+        aboutTextLabel.numberOfLines = shouldExpand ? 0 : 5
     }
 }
 

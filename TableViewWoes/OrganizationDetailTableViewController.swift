@@ -60,6 +60,23 @@ class OrganizationDetailTableViewController: UITableViewController, Organization
     {
         return tableView.dequeueReusableCellWithIdentifier("aboutCard", forIndexPath: indexPath) as OrganizationDetailCell
     }
+    
+    private var expandedIndexPaths: [NSIndexPath] = []
+    private func toggleReadMoreForIndexPath(indexPath: NSIndexPath)
+    {
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? OrganizationDetailAboutCardCell {
+            if (contains(expandedIndexPaths, indexPath)) {
+                expandedIndexPaths.removeAtIndex(find(expandedIndexPaths, indexPath)!)
+                cell.expandCard(false)
+                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+            }
+            else {
+                expandedIndexPaths += [indexPath]
+                cell.expandCard(true)
+                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+            }
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -95,6 +112,14 @@ class OrganizationDetailTableViewController: UITableViewController, Organization
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let section = indexPath.section
+        let row = indexPath.row
+        if section > 0 {
+            toggleReadMoreForIndexPath(indexPath)
+        }
+    }
+    
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     {
         if section == 0 {
@@ -108,27 +133,25 @@ class OrganizationDetailTableViewController: UITableViewController, Organization
         }
     }
     
-//    private var expandedIndexPaths: [NSIndexPath] = []
-//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
-//    {
-//        let section = indexPath.section
-//        let row = indexPath.row
-//        if section == 0 {
-//            if row == 0 {
-//                let height = round(self.view.bounds.size.width / (958*354))
-//                return height
-//            }
-//            else if row == 1 {
-//                return heightForInfoCell()
-//            }
-//            else {
-//                return 69.0
-//            }
-//        }
-//        else {
-//            return 200.0
-//        }
-//    }
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        let section = indexPath.section
+        let row = indexPath.row
+        if section == 0 {
+            if row == 0 {
+                return 135.0
+            }
+            else if row == 1 {
+                return 103.0
+            }
+            else {
+                return 69.0
+            }
+        }
+        else {
+            return 200.0
+        }
+    }
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat
     {
@@ -163,20 +186,10 @@ class OrganizationDetailTableViewController: UITableViewController, Organization
         println("Requests tapped")
         self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.None)
     }
+    
     func opportunitiesButtonTapped()
     {
         println("Opportunities tapped")
         self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 2, inSection: 0)], withRowAnimation: UITableViewRowAnimation.None)
-    }
-    
-    // MARK: - About Card TapGestureRecognizer
-    
-    @IBAction func tapped(sender: UITapGestureRecognizer)
-    {
-        if let view = sender.view?.superview as? OrganizationDetailAboutCardCell {
-            tableView.beginUpdates()
-            view.toggleReadMore()
-            tableView.endUpdates()
-        }
     }
 }
