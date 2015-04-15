@@ -45,20 +45,20 @@ class OrganizationDetailTableViewController: UITableViewController, Organization
         var cell: OrganizationDetailCell!
         switch indexPath.row {
         case 0:
-            cell = tableView.dequeueReusableCellWithIdentifier("headerImage", forIndexPath: indexPath) as OrganizationDetailCell
+            cell = tableView.dequeueReusableCellWithIdentifier("headerImage", forIndexPath: indexPath) as! OrganizationDetailCell
         case 1:
-            cell = tableView.dequeueReusableCellWithIdentifier("companyInfo", forIndexPath: indexPath) as OrganizationDetailCell
+            cell = tableView.dequeueReusableCellWithIdentifier("companyInfo", forIndexPath: indexPath)as! OrganizationDetailCell
         case 2:
-            cell = tableView.dequeueReusableCellWithIdentifier("buttons", forIndexPath: indexPath) as OrganizationDetailCell
+            cell = tableView.dequeueReusableCellWithIdentifier("buttons", forIndexPath: indexPath) as! OrganizationDetailCell
         default:
-            cell = tableView.dequeueReusableCellWithIdentifier("headerImage", forIndexPath: indexPath) as OrganizationDetailCell
+            cell = tableView.dequeueReusableCellWithIdentifier("headerImage", forIndexPath: indexPath)as! OrganizationDetailCell
         }
         return cell!
     }
     
     private func aboutCardCellForTableView(tableView: UITableView, indexPath: NSIndexPath) -> OrganizationDetailCell
     {
-        return tableView.dequeueReusableCellWithIdentifier("aboutCard", forIndexPath: indexPath) as OrganizationDetailCell
+        return tableView.dequeueReusableCellWithIdentifier("aboutCard", forIndexPath: indexPath) as! OrganizationDetailCell
     }
     
     private var expandedIndexPaths: [NSIndexPath] = []
@@ -103,7 +103,7 @@ class OrganizationDetailTableViewController: UITableViewController, Organization
             cell = headerCellForTableView(tableView, indexPath: indexPath)
             if indexPath.row == 2 {
                 // For the buttons, set this as the delegate to receive tap messages.
-                (cell as OrganizationDetailButtonsCell).delegate = self
+                (cell as! OrganizationDetailButtonsCell).delegate = self
             }
         default:
             cell = aboutCardCellForTableView(tableView, indexPath: indexPath)
